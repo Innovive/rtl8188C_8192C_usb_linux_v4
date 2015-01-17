@@ -23,7 +23,7 @@
 #include <rtw_debug.h>
 #include <../hal/dm.h>
 
-//#ifdef CONFIG_DEBUG_RTL871X
+#ifdef CONFIG_DEBUG_RTL871X
 
 	u32 GlobalDebugLevel = _drv_err_;
 
@@ -58,7 +58,11 @@
 			_module_mp_ |
 			_module_efuse_;
 
-//#endif
+#else
+
+	u32 GlobalDebugLevel = _drv_err_;
+
+#endif
 
 #ifdef CONFIG_PROC_DEBUG
 #include <rtw_version.h>
